@@ -1,12 +1,14 @@
 // Define Server
 require('dotenv').config()
 const express = require('express')
+const bodyParser = require('body-parser');
 const cors = require('cors')
 const router = require('./Routes/router')
 require('./DB/connection')
 
 // create an express application
 const BLGServer = express()
+BLGServer.use(bodyParser.json({ limit: '50mb' }));
 BLGServer.use(cors())
 BLGServer.use(express.json())
 BLGServer.use(router)

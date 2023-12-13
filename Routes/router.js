@@ -13,4 +13,10 @@ router.post('/user/login',userController.login)
 // add-blog 
 router.post('/blog/add',jwtMiddleware,blogController.addBlogs)
 
+// userBlogs
+router.get('/user/all-blogs',jwtMiddleware,blogController.allUserBlogs)
+
+// getAllBlogs
+router.get('/blogs/all',jwtMiddleware,blogController.getAllBlogs)
+
 module.exports = router
