@@ -5,6 +5,11 @@ const blogSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    name: {
+        type: String,
+            // required: true,
+        min: [3, `Must be at least 3, got {VALUE}`]
+    },
     content: {
         type: String,
         required: true,
