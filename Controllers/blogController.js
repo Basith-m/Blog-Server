@@ -20,7 +20,7 @@ exports.addBlogs = async  (req,res) => {
             const existingBlog = await blogs.findOneAndUpdate({ content }, { date, name, userId });
             return res.status(200).json(existingBlog); // Return the existing blog data
         }
-        res.status(401).json(`Request failed, Error : ${err}`)
+        return res.status(401).json(`Request failed, Error : ${err}`)
     }
 }
 
@@ -48,5 +48,3 @@ exports.getAllBlogs = async (req,res) => {
         res.status(401).json(err)
     }
 }
-
-// 

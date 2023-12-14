@@ -19,4 +19,5 @@ router.get('/user/all-blogs',jwtMiddleware,blogController.allUserBlogs)
 // getAllBlogs
 router.get('/blogs/all',jwtMiddleware,blogController.getAllBlogs)
 
+
 module.exports = router
